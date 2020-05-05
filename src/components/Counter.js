@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 function Counter() {
 
@@ -11,15 +11,16 @@ function Counter() {
         setValue(e.target.value)
         setCount(Number(e.target.value))
         } else {
-        setMessage("That's not a valide number")
+        setMessage("Sorry, but you can only enter numbers here!")
         }
     }
     
     return (
         <div>
+            <h3>Starting value for the counter: </h3>
             <input type="text" value={value} onChange={handleChangeValue} />
-            <p>Le compteur est  à : {count} </p>
             <p style={{color:"red"}}>{message}</p>
+            <h3>Le compteur est  à : {count} </h3>          
             <button onClick={() => setCount(count + 1)}>+1</button>
             <button onClick={() => setCount(count - 1)}>-1</button>
         </div>
